@@ -1,0 +1,18 @@
+-Lister les annonces mbola tsy nasina teste:
+    -Recrutement/annonce_no_test
+-Debut date entretien:
+    -Recrutement/date_entretien
+    -Recrutement/get_date_fin
+-Misafidy le admin ze atao admis:
+    -Recrutement/list_vita_entretien
+    -Recrutement/update_status_entretien_to_admis
+-Conger:
+    -Recrutement/conger
+    -Recrutement/dureeConger
+    -Recrutement/resteConger
+-ListConger:
+    -Recrutement/listConger
+-Embauche:
+    -Recrutement/embauche
+-ListEmploye:
+    -Recrutement/listEmploye

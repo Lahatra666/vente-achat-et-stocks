@@ -1,0 +1,25 @@
+//CommandeFournisseurController
+  
+  public function voircommandelivrer()
+    {
+      $data = array();
+      $idFournisseur = $this->input->get('idfournisseur');
+      $data['info'] = $this->Commandefournisseur->listcommandelivrer($idFournisseur);
+      $this->load->view('fournisseur/commandelivre', $data);
+      }
+
+//Acceuil fournisseur
+
+<p><a href="<?php echo base_url('fournisseur/CommandeFournisseurController/voircommande')?>?idfournisseur=<?php echo $session; ?>">Liste des Commandes non livre</a></p>
+<p><a href="<?php echo base_url('fournisseur/CommandeFournisseurController/voircommandelivrer')?>?idfournisseur=<?php echo $session; ?>">Liste des Commandes Livre</a></p>
+
+
+//Commandefournisseur
+  public function listcommandelivrer($id) {
+      $csx = $this->db;
+      $sql = "select * from commande 
+      join proformafournisseur on commande.idfournisseur=proformafournisseur.idfournisseur
+      Where Etat=1 and commande.idfournisseur=".$id;
+      $query = $csx->query($sql);
+      return $query->result_array();
+   }
